@@ -132,39 +132,38 @@ const fourStars = [
   { name: "The Flute", rarity: 4, image: "/images/weapon_the_flute.webp" }
 ];
 const threeStarWeapons = [
-  { name: "Amber Catalyst", rarity: 3 },
-  { name: "Black Tassel", rarity: 3 },
-  { name: "Bloodtainted Greatsword", rarity: 3 },
-  { name: "Cool Steel", rarity: 3 },
-  { name: "Dark Iron Sword", rarity: 3 },
-  { name: "Debate Club", rarity: 3 },
-  { name: "Emerald Orb", rarity: 3 },
-  { name: "Ferrous Shadow", rarity: 3 },
-  { name: "Fillet Blade", rarity: 3 },
-  { name: "Halberd", rarity: 3 },
-  { name: "Harbinger of Dawn", rarity: 3 },
-  { name: "Magic Guide", rarity: 3 },
-  { name: "Messenger", rarity: 3 },
-  { name: "Otherworldly Story", rarity: 3 },
-  { name: "Quartz", rarity: 3 },
-  { name: "Raven Bow", rarity: 3 },
-  { name: "Recurve Bow", rarity: 3 },
-  { name: "Sharpshooter's Oath", rarity: 3 },
-  { name: "Skyrider Greatsword", rarity: 3 },
-  { name: "Skyrider Sword", rarity: 3 },
-  { name: "Slingshot", rarity: 3 },
-  { name: "Thrilling Tales of Dragon Slayers", rarity: 3 },
-  { name: "Traveler's Handy Sword", rarity: 3 },
-  { name: "Twin Nephrite", rarity: 3 },
-  { name: "White Iron Greatsword", rarity: 3 }
+  { name: "Amber Catalyst", rarity: 3, image: "/images/weapon_amber_catalyst.webp" },
+  { name: "Black Tassel", rarity: 3, image: "/images/weapon_black_tassel.webp" },
+  { name: "Bloodtainted Greatsword", rarity: 3, image: "/images/weapon_bloodtainted_greatsword.webp" },
+  { name: "Cool Steel", rarity: 3, image: "/images/weapon_cool_steel.webp" },
+  { name: "Dark Iron Sword", rarity: 3, image: "/images/weapon_dark_iron_sword.webp" },
+  { name: "Debate Club", rarity: 3, image: "/images/weapon_debate_club.webp" },
+  { name: "Emerald Orb", rarity: 3, image: "/images/weapon_emerald_orb.webp" },
+  { name: "Ferrous Shadow", rarity: 3, image: "/images/weapon_ferrous_shadow.webp" },
+  { name: "Fillet Blade", rarity: 3, image: "/images/weapon_fillet_blade.webp" },
+  { name: "Halberd", rarity: 3, image: "/images/weapon_halberd.webp" },
+  { name: "Harbinger of Dawn", rarity: 3, image: "/images/weapon_harbinger_of_dawn.webp" },
+  { name: "Magic Guide", rarity: 3, image: "/images/weapon_magic_guide.webp" },
+  { name: "Messenger", rarity: 3, image: "/images/weapon_messenger.webp" },
+  { name: "Otherworldly Story", rarity: 3, image: "/images/weapon_otherworldly_story.webp" },
+  { name: "Raven Bow", rarity: 3, image: "/images/weapon_raven_bow.webp" },
+  { name: "Recurve Bow", rarity: 3, image: "/images/weapon_recurve_bow.webp" },
+  { name: "Sharpshooter's Oath", rarity: 3, image: "/images/weapon_sharpshooters_oath.webp" },
+  { name: "Skyrider Sword", rarity: 3, image: "/images/weapon_skyrider_sword.webp" },
+  { name: "Slingshot", rarity: 3, image: "/images/weapon_slingshot.webp" },
+  { name: "Thrilling Tales of Dragon Slayers", rarity: 3, image: "/images/weapon_thrilling_tales_of_dragon_slayers.webp" },
+  { name: "Traveler's Handy Sword", rarity: 3, image: "/images/weapon_travelers_handy_sword.webp" },
+  { name: "Twin Nephrite", rarity: 3, image: "/images/weapon_twin_nephrite.webp" },
+  { name: "White Iron Greatsword", rarity: 3, image: "/images/weapon_white_iron_greatsword.webp" }
 ];
+
 
 let pity = 0;
 let pullsSinceFourstar = 0;
 function random(arr){
   return arr[Math.floor(Math.random()* arr.length)]
 }
-function wishingpity(){
+function whatrarity(){
   pity++
   let pityforfivestar = 0.006 + pity * 0.002;
   if (Math.random() < pityforfivestar) {
@@ -183,6 +182,9 @@ function wishingpity(){
   pullsSinceFourstar++
   return 3
 }
+wishingpity()
+
+
 function thegamblepart(){
   const rarity = getrarity();
   if (rarity === 5){
@@ -193,3 +195,4 @@ function thegamblepart(){
   }
   return random(threeStarWeapons)
 }
+
