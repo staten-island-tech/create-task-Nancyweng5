@@ -157,42 +157,79 @@ const threeStarWeapons = [
   { name: "White Iron Greatsword", rarity: 3, image: "/images/weapon_white_iron_greatsword.webp" }
 ];
 
-
 let pity = 0;
-let pullsSinceFourstar = 0;
-function random(arr){
-  return arr[Math.floor(Math.random()* arr.length)]
+let pullsSince4 = 0;
+let currentBanner = null;
+
+const banner = document.querySelector(".banners")
+limited5stars.forEach((character, index)=> {
+  banner.insertAdjacentHTML("beforeend",
+    `<div class ="banner" data-index = "${index}">
+    <img src = "${character.image}">
+    <p>${character.name}</p>
+    </div>`
+  )
+})
+
+banner.addEventListener("click", function(event) {
+  const banner = event.target.closest(".banner")
+  const index = banner.dataset.index
+  openbanner(index)
+})
+function openbanner(index){
+  currentBanner = limited5stars[index];
+  document.querySelector(".wishscreen").style.display ="block"
+  document.querySelector(".bannername").textContent = currentBanner.name
 }
-function whatrarity(){
+function singlewish(){
+  wish(1)
+}
+function tenwish(){
+  wish(10)
+}
+document.querySelector(".singlewish").addEventListener("click", singlewish)
+document.querySelector(".tenwish").addEventListener("click", tenwish)
+
+function random(array){
+  return array[Math.floor(Math.random()* array.length)]
+}
+function showresult(item){
+  const results = document.querySelector(".results");
+  results.style.display = "flex";
+  document.querySelector(".resultsimage").src = item.image
+  results.onclick = function (){
+    results.style.display = "none";
+  }
+}
+function updatepity(){
+  document.querySelector(".pityscore").textContent = "Pity : " + pity
+}
+function onepull(){
   pity++
-  let pityforfivestar = 0.006 + pity * 0.002;
-  if (Math.random() < pityforfivestar) {
+  pullsSince4++
+  let fivestarpity = 0.006 +pity * 0.0002;
+  if (pity >= 90){
+    fivestarpity =1;
+  }
+  const pull = Math.random()
+  let result;
+  if (pull < fivestarpity){
+    result = currentBanner;
     pity = 0;
-    pullsSinceFourstar = 0;
-    return 5
+    pullsSince4 = 0
   }
-  if (pullsSinceFourstar >=9){
-    pullsSinceFourstar = 0;
-    return 4;
+  else if (pullsSince4 >= 10){
+    result = random(fourStars)
+    pullsSince4 = 0;
   }
-  if (Math.random() < 0.05){
-  pullsSinceFourstar = 0; 
-  return 4
+  else {
+    result = random(threeStarWeapons)
   }
-  pullsSinceFourstar++
-  return 3
+  showresult(result)
+  updatepity();
 }
-wishingpity()
-
-
-function thegamblepart(){
-  const rarity = getrarity();
-  if (rarity === 5){
-    return (random(limited5stars) || random(standard5stars))
+function wish(amount){
+  for(let i=0; i<amount; i++){
+    onepull()
   }
-  if (rarity === 4) {
-    return random(fourStars)
-  }
-  return random(threeStarWeapons)
 }
-
