@@ -71,7 +71,7 @@ const fourStars = [
   { name: "Xiangling", rarity: 4, image: "/public/xiangling_wish.webp" },
   { name: "Beidou", rarity: 4, image: "/public/beidou.webp" },
   { name: "Xingqiu", rarity: 4, image: "/public/xingqiu_wish.webp" },
-  { name: "Ningguang", rarity: 4, image: "/impublicages/ningguang_wish.webp" },
+  { name: "Ningguang", rarity: 4, image: "/public/ningguang_wish.webp" },
   { name: "Fischl", rarity: 4, image: "/public/fischl_wish.webp" },
   { name: "Bennett", rarity: 4, image: "/public/benny.webp" },
   { name: "Noelle", rarity: 4, image: "/public/noelle_wish.webp" },
@@ -99,8 +99,8 @@ const fourStars = [
   { name: "Kirara", rarity: 4, image: "/public/kirara_wish.webp" },
   { name: "Lynette", rarity: 4, image: "/public/lynette_wish.webp" },
   { name: "Freminet", rarity: 4, image: "/public/freminet_wish.webp" },
-  { name: "Charlotte", rarity: 4, image: "/public/charlotte_wish.webp" },
-  { name: "Chevereuse", rarity: 4, image: "/public/chevereuse.webp" },
+  { name: "Charlotte", rarity: 4, image: "/public/charlotte.webp" },
+  { name: "Cheveruse", rarity: 4, image: "/public/cheveruse.webp" },
   { name: "Gaming", rarity: 4, image: "/public/gaming_wish.webp" },
   { name: "Sethos", rarity: 4, image: "/public/sethos_wish.webp" },
   { name: "Kachina", rarity: 4, image: "/public/kachina_wish.webp" },
@@ -108,10 +108,9 @@ const fourStars = [
   { name: "Lan Yan", rarity: 4, image: "/public/lan_yan_wish.webp" },
   { name: "Iansan", rarity: 4, image: "/public/iansan_wish.webp" },
   { name: "Ifa", rarity: 4, image: "/public/ifa_wish.webp" },
-  { name: "Dhalia", rarity: 4, image: "/public/dhalia_wish.webp" },
+  { name: "Dahlia", rarity: 4, image: "/public/dahlia_wish.webp" },
   { name: "Aino", rarity: 4, image: "/public/aino.webp" },
   { name: "Jahoda", rarity: 4, image: "/public/jahoda_wish.webp" },
-  { name: "Illuga", rarity: 4, image: "/public/illuga_wish.webp" },
   { name: "Favonius Sword", rarity: 4, image: "/public/weapon_favonius_sword.webp" },
   { name: "Favonius Lance", rarity: 4, image: "/public/weapon_favonius_lance.webp" },
   { name: "Favonius Warbow", rarity: 4, image: "/public/weapon_favonius_warbow.webp" },
@@ -122,12 +121,9 @@ const fourStars = [
   { name: "Sacrificial Fragments", rarity: 4, image: "/public/weapon_sacrificial_fragments.webp" },
   { name: "Sacrificial Greatsword", rarity: 4, image: "/public/weapon_sacrificial_greatsword.webp" },
   { name: "The Widsith", rarity: 4, image: "/public/weapon_the_widsith.webp" },
-  { name: "The Stringless", rarity: 4, image: "/public/weapon_the_stringless.webp" },
   { name: "Rust", rarity: 4, image: "/public/weapon_rust.webp" },
-  { name: "Dragon's Bane", rarity: 4, image: "/public/weapon_dragons_bane.webp" },
-  { name: "Lion's Roar", rarity: 4, image: "/public/weapon_lions_roar.webp" },
-  { name: "The Bell", rarity: 4, image: "/public/weapon_the_bell.webp" },
-  { name: "Rainslasher", rarity: 4, image: "/public/weapon_rainslasher.webp" },
+  { name: "Dragon's Bane", rarity: 4, image: "/public/weapon_dragon's_bane.webp" },
+  { name: "Lion's Roar", rarity: 4, image: "/public/weapon_lion's_roar.webp" },
   { name: "Eye of Perception", rarity: 4, image: "/public/weapon_eye_of_perception.webp" },
   { name: "The Flute", rarity: 4, image: "/public/weapon_the_flute.webp" }
 ];
@@ -144,17 +140,14 @@ const threeStarWeapons = [
   { name: "Halberd", rarity: 3, image: "/public/weapon_halberd.webp" },
   { name: "Harbinger of Dawn", rarity: 3, image: "/public/weapon_harbinger_of_dawn.webp" },
   { name: "Magic Guide", rarity: 3, image: "/public/weapon_magic_guide.webp" },
-  { name: "Messenger", rarity: 3, image: "/public/weapon_messenger.webp" },
   { name: "Otherworldly Story", rarity: 3, image: "/public/weapon_otherworldly_story.webp" },
   { name: "Raven Bow", rarity: 3, image: "/public/weapon_raven_bow.webp" },
-  { name: "Recurve Bow", rarity: 3, image: "/public/weapon_recurve_bow.webp" },
   { name: "Sharpshooter's Oath", rarity: 3, image: "/public/weapon_sharpshooter's_oath.webp" },
   { name: "Skyrider Sword", rarity: 3, image: "/public/weapon_skyrider_sword.webp" },
   { name: "Slingshot", rarity: 3, image: "/public/weapon_slingshot.webp" },
   { name: "Thrilling Tales of Dragon Slayers", rarity: 3, image: "/public/weapon_thrilling_tales_of_dragon_slayers.webp" },
   { name: "Traveler's Handy Sword", rarity: 3, image: "/public/weapon_traveler's_handy_sword.webp" },
   { name: "Twin Nephrite", rarity: 3, image: "/public/weapon_twin_nephrite.webp" },
-  { name: "White Iron Greatsword", rarity: 3, image: "/public/weapon_white_iron_greatsword.webp" }
 ];
 
 let pity = 0;
@@ -169,7 +162,6 @@ limited5stars.forEach((character, index)=> {
     </div>`
   )
 })
-
 banner.addEventListener("click", function(event) {
   const banner = event.target.closest(".banner")
   const index = banner.dataset.index
@@ -192,43 +184,62 @@ document.querySelector(".tenwish").addEventListener("click", tenwish)
 function random(array){
   return array[Math.floor(Math.random()* array.length)]
 }
-function showresult(item){
-  const results = document.querySelector(".results");
-  results.style.display = "flex";
-  document.querySelector(".resultsimage").src = item.image
-  results.onclick = function (){
-    results.style.display = "none";
-  }
-}
 function updatepity(){
   document.querySelector(".pityscore").textContent = "Pity : " + pity
 }
-function onepull(){
+let guaranteed = false;
+function pulling(){
   pity++
   pullsSince4++
-  let fivestarpity = 0.006 +pity * 0.0002;
+  let fivestarpity = 0.006 + pity * 0.0002;
   if (pity >= 90){
     fivestarpity =1;
   }
   const pull = Math.random()
   let result;
   if (pull < fivestarpity){
-    result = currentBanner;
+    if (guaranteed){
+      result = currentBanner;
+      guaranteed = false;
+    }
+    else {
+      if (Math.random() < 0.5){
+        result = currentBanner
+      }
+      else {
+        result = random(standard5stars);
+        guaranteed = true;
+      }
+    }
     pity = 0;
-    pullsSince4 = 0
+    pullsSince4 = 0;
   }
-  else if (pullsSince4 >= 9){
+  else if (pullsSince4 >= 10){
+    result = random(fourStars)
+    pullsSince4 = 0;
+  }
+  else if (pull < fivestarpity + 0.05){
     result = random(fourStars)
     pullsSince4 = 0;
   }
   else {
     result = random(threeStarWeapons)
   }
-  showresult(result)
-  updatepity();
+  return result;
 }
 function wish(amount){
+  const results = document.querySelector(".results");
+  results.style.display = "flex";
+  results.innerHTML = "";
+  results.addEventListener("click", () => {
+  results.style.display = "none";
+});
   for(let i=0; i<amount; i++){
-    onepull()
+    const item = pulling();
+    results.insertAdjacentHTML("beforeend", 
+      `<div class="resultcontainer">
+      <img src="${item.image}" class = "resultsimage">`
+    );
   }
-}
+  updatepity();
+  }

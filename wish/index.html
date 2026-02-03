@@ -4,30 +4,24 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Genshin Very Poorly Made Wishing Simulator</title>
+    <title>Genshin Wishing Simulator</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="wishscreen" style="display: none">
       <h2 class="bannername"></h2>
-      <div class="results" style="display: none">
-        <img class="resultsimage" />
-        <p>Click to continue</p>
-      </div>
       <button class="singlewish">1 Pull</button>
       <button class="tenwish">10 Pull</button>
       <p class="pityscore">Pity : 0</p>
+      <div class="results" style="display: none"></div>
     </div>
     <div class="banners"></div>
-    <div class="wishscreen" style="display: none">
-      <h2 class="bannername"></h2>
-      <div class="results" style="display: none">
-        <img class="resultsimage" />
-        <p>Click to continue</p>
-      </div>
-      <button class="singlewish">1 Pull</button>
-      <button class="tenwish">10 Pull</button>
-      <p class="pityscore">Pity : 0</p>
-    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
