@@ -1,22 +1,22 @@
 body {
   font-family: "EB Garamond", serif;
-  background: #DBE2EF;
-  color: #112D4E;
+  background: #dbe2ef;
+  color: #112d4e;
   text-align: center;
   font-size: 10px;
 }
 .banner p,
-.bannername{
+.bannername {
   font-size: 30px;
 }
 .banners {
   display: flex;
-  flex-wrap: wrap;   
+  flex-wrap: wrap;
   gap: 40px;
   justify-content: center;
   margin-top: 20px;
   border-radius: 5px;
-  background-color:#F9F7F7;
+  background-color: #f9f7f7;
 }
 .banner img {
   width: 200px;
@@ -51,7 +51,7 @@ body {
 .pityscore {
   font-size: 30px;
 }
-button{
+button {
   font-size: 20px;
   border-radius: 5px;
 }
